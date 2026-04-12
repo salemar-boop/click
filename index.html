@@ -3,19 +3,55 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Abstract Interactions</title>
+  <title>Memory Jam</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="home">
-  <main class="center-wrap">
-    <h1>Abstract Interactions</h1>
-    <p class="subtitle">Choose a page and explore hover, click, and scroll behaviors.</p>
-    <nav class="page-nav">
-      <a href="page1.html">Sub-Page One</a>
-      <a href="page2.html">Sub-Page Two</a>
-      <a href="page3.html">Sub-Page Three</a>
-      <a href="page4.html">Sub-Page Four</a>
-    </nav>
+<body class="page-home">
+  <div class="starfield" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <h1 class="site-title">Memory Jam</h1>
+  </header>
+
+  <main class="home-main">
+    <section class="prompt-card prompt-card--first">
+      <h2 class="prompt-card__label">Today’s spark</h2>
+      <p class="prompt-card__text">Write one sentence about a smell that instantly takes you somewhere else.</p>
+      <button type="button" class="btn btn-primary">Open your jar</button>
+    </section>
+
+    <section class="prompt-card prompt-card--second">
+      <h2 class="prompt-card__label">Gentle follow-up</h2>
+      <p class="prompt-card__text">Who was with you in that moment, even if they were only there in spirit?</p>
+      <button type="button" class="btn btn-secondary">Keep going</button>
+    </section>
+
+    <section class="where-next" aria-labelledby="where-next-heading">
+      <h2 id="where-next-heading" class="where-next__title">Where to next?</h2>
+      <div class="where-next__viewport">
+        <div class="where-next__track" id="where-next-track">
+          <article class="where-next__slide is-active" data-slide="0">
+            <p>Visit <strong>Your jars</strong> to sort memories by theme and give each one a little label.</p>
+            <a class="btn btn-link" href="jars.html">Go to jars</a>
+          </article>
+          <article class="where-next__slide" data-slide="1">
+            <p>Open <strong>Shared jars</strong> to see what others added—and drop in your own line.</p>
+            <a class="btn btn-link" href="shared-jars.html">Shared jars</a>
+          </article>
+          <article class="where-next__slide" data-slide="2">
+            <p>Come back anytime; your browser keeps shared additions so you can build the wall together.</p>
+            <span class="where-next__hint">Tip: add from Shared jars to collaborate.</span>
+          </article>
+        </div>
+      </div>
+      <div class="where-next__controls">
+        <button type="button" class="btn btn-ghost" id="where-prev" aria-label="Previous slide">◀</button>
+        <div class="where-next__dots" id="where-dots" role="tablist" aria-label="Slides"></div>
+        <button type="button" class="btn btn-ghost" id="where-next" aria-label="Next slide">▶</button>
+      </div>
+    </section>
   </main>
+
+  <script src="memoryjam.js"></script>
 </body>
 </html>
